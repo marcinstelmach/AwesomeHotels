@@ -13,9 +13,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UsersService", "UsersService", "{161F48FE-8DE4-43E6-AE59-4BB0EC8EA330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeHotels.Services.Users.Api", "src\services\Users\AwesomeHotels.Services.Users.Api\AwesomeHotels.Services.Users.Api.csproj", "{211BC239-6D2B-4C97-AB8C-7BC3A9D01766}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwesomeHotels.Services.Users.Api", "src\services\Users\AwesomeHotels.Services.Users.Api\AwesomeHotels.Services.Users.Api.csproj", "{211BC239-6D2B-4C97-AB8C-7BC3A9D01766}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E4153E61-0691-43AC-9225-CA43B1F6B58D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwesomeHotels.Services.Users.Domain", "src\services\Users\AwesomeHotels.Services.Users.Domain\AwesomeHotels.Services.Users.Domain.csproj", "{09A47213-D735-458C-B2CB-EC6ED6F8FCF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwesomeHotels.Services.Users.Application", "src\services\Users\AwesomeHotels.Services.Users.Application\AwesomeHotels.Services.Users.Application.csproj", "{E4F285C9-0A59-4C91-A81E-3494BD13E06D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwesomeHotels.Services.Users.Infrastructure", "src\services\Users\AwesomeHotels.Services.Users.Infrastructure\AwesomeHotels.Services.Users.Infrastructure.csproj", "{F364FAF0-03AB-4956-AEDF-6E78A2692DA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{5E3CDEC5-8AD6-4927-9550-A3E7333E9E98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Domain", "src\Shared\BuildingBlocks.Domain\BuildingBlocks.Domain.csproj", "{378AB9EC-588A-417E-9B0B-B114FBC8C504}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Application", "src\Shared\BuildingBlocks.Application\BuildingBlocks.Application.csproj", "{6F1D9AEF-A7C8-4954-9B83-6B96E04A88B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeHotels.Services.Users.Db.Migrations", "src\services\Users\AwesomeHotels.Services.Users.Db.Migrations\AwesomeHotels.Services.Users.Db.Migrations.csproj", "{7428AA03-AA4C-4FA2-BF89-34EFF0670043}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +49,30 @@ Global
 		{E4153E61-0691-43AC-9225-CA43B1F6B58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4153E61-0691-43AC-9225-CA43B1F6B58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4153E61-0691-43AC-9225-CA43B1F6B58D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A47213-D735-458C-B2CB-EC6ED6F8FCF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A47213-D735-458C-B2CB-EC6ED6F8FCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A47213-D735-458C-B2CB-EC6ED6F8FCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A47213-D735-458C-B2CB-EC6ED6F8FCF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4F285C9-0A59-4C91-A81E-3494BD13E06D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4F285C9-0A59-4C91-A81E-3494BD13E06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4F285C9-0A59-4C91-A81E-3494BD13E06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4F285C9-0A59-4C91-A81E-3494BD13E06D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F364FAF0-03AB-4956-AEDF-6E78A2692DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F364FAF0-03AB-4956-AEDF-6E78A2692DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F364FAF0-03AB-4956-AEDF-6E78A2692DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F364FAF0-03AB-4956-AEDF-6E78A2692DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{378AB9EC-588A-417E-9B0B-B114FBC8C504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{378AB9EC-588A-417E-9B0B-B114FBC8C504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{378AB9EC-588A-417E-9B0B-B114FBC8C504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{378AB9EC-588A-417E-9B0B-B114FBC8C504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F1D9AEF-A7C8-4954-9B83-6B96E04A88B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F1D9AEF-A7C8-4954-9B83-6B96E04A88B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F1D9AEF-A7C8-4954-9B83-6B96E04A88B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F1D9AEF-A7C8-4954-9B83-6B96E04A88B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7428AA03-AA4C-4FA2-BF89-34EFF0670043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7428AA03-AA4C-4FA2-BF89-34EFF0670043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7428AA03-AA4C-4FA2-BF89-34EFF0670043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7428AA03-AA4C-4FA2-BF89-34EFF0670043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +82,13 @@ Global
 		{A8AF5C5F-32A2-4EC0-9921-E695F10BA82F} = {8941A686-CF76-47EA-8E84-54CF3F5761A4}
 		{161F48FE-8DE4-43E6-AE59-4BB0EC8EA330} = {A8AF5C5F-32A2-4EC0-9921-E695F10BA82F}
 		{211BC239-6D2B-4C97-AB8C-7BC3A9D01766} = {161F48FE-8DE4-43E6-AE59-4BB0EC8EA330}
+		{09A47213-D735-458C-B2CB-EC6ED6F8FCF6} = {161F48FE-8DE4-43E6-AE59-4BB0EC8EA330}
+		{E4F285C9-0A59-4C91-A81E-3494BD13E06D} = {161F48FE-8DE4-43E6-AE59-4BB0EC8EA330}
+		{F364FAF0-03AB-4956-AEDF-6E78A2692DA9} = {161F48FE-8DE4-43E6-AE59-4BB0EC8EA330}
+		{5E3CDEC5-8AD6-4927-9550-A3E7333E9E98} = {8941A686-CF76-47EA-8E84-54CF3F5761A4}
+		{378AB9EC-588A-417E-9B0B-B114FBC8C504} = {5E3CDEC5-8AD6-4927-9550-A3E7333E9E98}
+		{6F1D9AEF-A7C8-4954-9B83-6B96E04A88B7} = {5E3CDEC5-8AD6-4927-9550-A3E7333E9E98}
+		{7428AA03-AA4C-4FA2-BF89-34EFF0670043} = {161F48FE-8DE4-43E6-AE59-4BB0EC8EA330}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B9B17D5-DF3F-445B-AFAF-E78644535D5B}
