@@ -1,6 +1,19 @@
 ﻿{
-  "Routes": [],
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/weatherforecast",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "awesomehotels-services-users-api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{version}/weather",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://api.mybusiness.com"
+    "BaseUrl": "http://awesomehotels-apigateway:5000"
   }
 }
