@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AwesomeHotels.ApiGateway.Controllers
+namespace AwesomeHotels.Services.Users.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

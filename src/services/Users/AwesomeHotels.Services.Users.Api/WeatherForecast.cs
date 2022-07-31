@@ -1,4 +1,4 @@
-namespace AwesomeHotels.ApiGateway
+namespace AwesomeHotels.Services.Users.Api
 {
     public class WeatherForecast
     {

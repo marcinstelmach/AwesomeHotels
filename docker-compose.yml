@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 15s
+      retries: 3
+      start_period: 30s
+
+  awesomehotels.apigateway:
+    container_name: awesomehotels-apigateway
+    image: ${DOCKER_REGISTRY-}awesomehotelsapigateway
+    build:
+      context: .
+      dockerfile: src/AwesomeHotels.ApiGateway/Dockerfile
+
+  awesomehotels.services.users.api:
+    container_name: awesomehotels-services-users-api
+    image: ${DOCKER_REGISTRY-}awesomehotelsservicesusersapi
+    build:
+      context: .
+      dockerfile: src/services/Users/AwesomeHotels.Services.Users.Api/Dockerfile
