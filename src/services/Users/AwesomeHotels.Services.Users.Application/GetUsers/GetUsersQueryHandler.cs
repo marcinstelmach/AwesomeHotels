@@ -1,12 +1,20 @@
-﻿using BuildingBlocks.Application;
+﻿using AwesomeHotels.Services.Users.Domain.Repositories;
+using BuildingBlocks.Application.Bus;
 
 namespace AwesomeHotels.Services.Users.Application.GetUsers;
 
-public class GetUsersQueryHandler : IQueryHandler<GetUsersQuery, GetUsersResponse>
+public class GetUsersQueryHandler : IQueryHandler<GetUsersQuery, IEnumerable<GetUsersResponse>>
 {
-    public async Task<GetUsersResponse> Handle(GetUsersQuery query, CancellationToken cancellationToken = default)
+    private readonly IUsersRepository _usersRepository;
+
+    public GetUsersQueryHandler(IUsersRepository usersRepository)
     {
-        await Task.CompletedTask;
-        return new GetUsersResponse(1, "Roman");
+        _usersRepository = usersRepository;
+    }
+
+    public async Task<IEnumerable<GetUsersResponse>> Handle(GetUsersQuery query, CancellationToken cancellationToken = default)
+    {
+        var users = await _usersRepository.GetUsersAsync();
+        return users.Select(x => new GetUsersResponse(x.Id.Id, $"{x.FirstName} {x.LastName}"));
     }
 }

@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.Application;
+﻿using BuildingBlocks.Application.Bus;
 using MediatR;
 
 namespace BuildingBlocks.Infrastructure.Bus

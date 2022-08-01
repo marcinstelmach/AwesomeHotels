@@ -1,5 +1,5 @@
 ﻿using AwesomeHotels.Services.Users.Application.GetUsers;
-using BuildingBlocks.Application;
+using BuildingBlocks.Application.Bus;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AwesomeHotels.Services.Users.Api.Controllers;

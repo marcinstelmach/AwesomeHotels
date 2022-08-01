@@ -1,4 +1,4 @@
-﻿namespace BuildingBlocks.Application;
+﻿namespace BuildingBlocks.Application.Bus;
 
 public interface IBus
 {

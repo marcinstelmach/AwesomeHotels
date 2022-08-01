@@ -20,6 +20,10 @@ public class User : IAggregateRoot
         CheckInvariants();
     }
 
+    private User()
+    {
+    }
+
     public UserId Id { get; private set; }
 
     public EmailAddress EmailAddress { get; private set; }

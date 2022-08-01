@@ -1,7 +1,7 @@
-﻿using BuildingBlocks.Application;
+﻿using BuildingBlocks.Application.Bus;
 
 namespace AwesomeHotels.Services.Users.Application.GetUsers;
 
-public class GetUsersQuery : IQuery<GetUsersResponse>
+public class GetUsersQuery : IQuery<IEnumerable<GetUsersResponse>>
 {
 }

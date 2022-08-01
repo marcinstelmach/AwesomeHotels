@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace BuildingBlocks.Application;
+namespace BuildingBlocks.Application.Bus;
 
 public interface ICommand : IRequest
 {
