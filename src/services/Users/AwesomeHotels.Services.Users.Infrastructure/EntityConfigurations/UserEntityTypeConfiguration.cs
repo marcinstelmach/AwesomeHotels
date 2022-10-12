@@ -17,7 +17,7 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
 
         builder.HasKey(t => t.Id);
 
-        builder.Property(x => x.Id).HasConversion(x => x.Id, x => UserId.Create(x));
+        builder.Property(x => x.Id).HasConversion(x => x.Value, x => UserId.Create(x));
 
         builder.Property(x => x.EmailAddress).HasConversion(x => x.Value.ToLowerInvariant(), x => EmailAddress.Create(x));
 

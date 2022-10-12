@@ -5,26 +5,26 @@ namespace AwesomeHotels.Services.Users.Domain.ValueObjects;
 
 public class UserId : ValueObject
 {
-    private UserId(long id)
+    private UserId(long value)
     {
-        Id = id;
+        Value = value;
         CheckInvariants();
     }
 
-    public long Id { get; private set; }
+    public long Value { get; private set; }
 
     public static UserId Create(long id) => new(id);
 
     private void CheckInvariants()
     {
-        if (Id < 1)
+        if (Value < 1)
         {
-            throw new InvalidUserIdException(Id);
+            throw new InvalidUserIdException(Value);
         }
     }
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
-        yield return Id;
+        yield return Value;
     }
 }

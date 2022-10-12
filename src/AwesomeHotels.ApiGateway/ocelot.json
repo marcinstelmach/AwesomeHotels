@@ -10,7 +10,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/v{version}/users",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get", "Post" ]
     }
   ],
   "GlobalConfiguration": {

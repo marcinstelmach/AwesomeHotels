@@ -1,3 +1,5 @@
+using AwesomeHotels.Services.Users.Api.Mappings;
+using AwesomeHotels.Services.Users.Application;
 using AwesomeHotels.Services.Users.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApiVersioning();
 
 builder.Services.AddInfrastructure();
+builder.Services.AddApplication();
+builder.Services.AddMappings();
 
 var app = builder.Build();
 

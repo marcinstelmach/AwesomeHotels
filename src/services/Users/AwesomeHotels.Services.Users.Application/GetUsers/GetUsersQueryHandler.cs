@@ -15,6 +15,6 @@ public class GetUsersQueryHandler : IQueryHandler<GetUsersQuery, IEnumerable<Get
     public async Task<IEnumerable<GetUsersResponse>> Handle(GetUsersQuery query, CancellationToken cancellationToken = default)
     {
         var users = await _usersRepository.GetUsersAsync();
-        return users.Select(x => new GetUsersResponse(x.Id.Id, $" {x.FirstName} {x.LastName}"));
+        return users.Select(x => new GetUsersResponse(x.Id.Value, $"{x.FirstName} {x.LastName}"));
     }
 }
