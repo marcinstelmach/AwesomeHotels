@@ -1,4 +1,5 @@
-﻿using AwesomeHotels.Services.Users.Application.AddUser;
+﻿using AwesomeHotels.Services.Users.Api.Utilities;
+using AwesomeHotels.Services.Users.Application.AddUser;
 using AwesomeHotels.Services.Users.Application.GetUsers;
 using BuildingBlocks.Application.Bus;
 using MapsterMapper;
@@ -6,17 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AwesomeHotels.Services.Users.Api.Controllers.Users.v1;
 
+[ApiController]
 [ApiVersion("1.0")]
 [Route("api/v{ver:apiVersion}/users")]
-public class UsersController : BaseController
+public class UsersController : ControllerBase
 {
     private readonly IBus _bus;
     private readonly IMapper _mapper;
+    private readonly IProblemFactory _problemFactory;
 
-    public UsersController(IBus bus, IMapper mapper)
+    public UsersController(IBus bus, IMapper mapper, IProblemFactory problemFactory)
     {
         _bus = bus;
         _mapper = mapper;
+        _problemFactory = problemFactory;
     }
 
     [HttpGet]
@@ -36,6 +40,6 @@ public class UsersController : BaseController
         var result = await _bus.SendAsync(command);
         return result.Match(
             value => Ok(new {Id = value}), 
-            errors => Problem(errors));
+            errors => _problemFactory.CreateProblemResult(errors));
     }
 }

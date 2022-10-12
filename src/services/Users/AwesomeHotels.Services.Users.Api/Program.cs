@@ -1,3 +1,4 @@
+using AwesomeHotels.Services.Users.Api;
 using AwesomeHotels.Services.Users.Api.Mappings;
 using AwesomeHotels.Services.Users.Application;
 using AwesomeHotels.Services.Users.Infrastructure;
@@ -9,6 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApiVersioning();
 
+builder.Services.AddApi();
 builder.Services.AddInfrastructure();
 builder.Services.AddApplication();
 builder.Services.AddMappings();
