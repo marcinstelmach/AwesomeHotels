@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace BuildingBlocks.Infrastructure;
+namespace AwesomeHotels.Services.Users.Infrastructure.Utilities;
 
 public class DateOnlyConverter : ValueConverter<DateOnly, DateTime>
 {

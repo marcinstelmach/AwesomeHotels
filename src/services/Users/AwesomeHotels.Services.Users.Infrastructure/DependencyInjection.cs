@@ -4,7 +4,6 @@ using AwesomeHotels.Services.Users.Infrastructure.Repositories;
 using AwesomeHotels.Services.Users.Infrastructure.Validation;
 using BuildingBlocks.Application;
 using BuildingBlocks.Application.Bus;
-using BuildingBlocks.Infrastructure.Bus;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -12,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AwesomeHotels.Services.Users.Infrastructure;
 
-public static class Extensions
+public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {

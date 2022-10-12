@@ -1,6 +1,6 @@
 ﻿using AwesomeHotels.Services.Users.Domain.Entities;
 using AwesomeHotels.Services.Users.Domain.ValueObjects;
-using BuildingBlocks.Infrastructure;
+using AwesomeHotels.Services.Users.Infrastructure.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

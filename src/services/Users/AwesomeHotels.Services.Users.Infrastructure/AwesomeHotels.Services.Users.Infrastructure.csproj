@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\BuildingBlocks.Infrastructure\BuildingBlocks.Infrastructure.csproj" />
     <ProjectReference Include="..\AwesomeHotels.Services.Users.Application\AwesomeHotels.Services.Users.Application.csproj" />
   </ItemGroup>
 

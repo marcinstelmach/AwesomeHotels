@@ -1,7 +1,6 @@
-﻿using BuildingBlocks.Application.Bus;
-using MediatR;
+﻿using MediatR;
 
-namespace BuildingBlocks.Infrastructure.Bus
+namespace BuildingBlocks.Application.Bus
 {
     public class MediatRBus : IBus
     {

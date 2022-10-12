@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace BuildingBlocks.Infrastructure;
+namespace AwesomeHotels.Services.Users.Infrastructure.Utilities;
 
 public class DateOnlyComparer : ValueComparer<DateOnly>
 {
