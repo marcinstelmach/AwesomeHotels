@@ -1,6 +1,7 @@
 ﻿using AwesomeHotels.Services.Users.Application;
 using AwesomeHotels.Services.Users.Domain.Repositories;
 using AwesomeHotels.Services.Users.Infrastructure.Repositories;
+using AwesomeHotels.Services.Users.Infrastructure.Validation;
 using BuildingBlocks.Application;
 using BuildingBlocks.Application.Bus;
 using BuildingBlocks.Infrastructure.Bus;
@@ -15,7 +16,10 @@ public static class Extensions
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
-        services.AddMediatR(UsersApplicationAssembly.Assembly);
+        services.AddMediatR(UsersApplicationAssemblyInfo.Assembly);
+
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+
         services.AddScoped<IBus, MediatRBus>();
         services.AddSnowflakeIdGenerator(new Random().Next(1, 200));
 
