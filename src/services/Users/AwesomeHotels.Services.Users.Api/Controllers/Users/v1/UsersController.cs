@@ -6,10 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AwesomeHotels.Services.Users.Api.Controllers.Users.v1;
 
-[ApiController]
 [ApiVersion("1.0")]
 [Route("api/v{ver:apiVersion}/users")]
-public class UsersController : ControllerBase
+public class UsersController : BaseController
 {
     private readonly IBus _bus;
     private readonly IMapper _mapper;
@@ -35,8 +34,8 @@ public class UsersController : ControllerBase
         var command = _mapper.Map<AddUserCommand>(request);
 
         var result = await _bus.SendAsync(command);
-        return result.Match<IActionResult>(
-            x => Ok(new {Id = x}), 
-            x => Problem(x.First().Description));
+        return result.Match(
+            value => Ok(new {Id = value}), 
+            errors => Problem(errors));
     }
 }
