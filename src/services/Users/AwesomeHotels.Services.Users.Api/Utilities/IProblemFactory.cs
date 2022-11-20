@@ -30,7 +30,7 @@ public class ProblemFactory : IProblemFactory
             modelState.AddModelError(error.Code, error.Description);
         }
 
-        var detail = _problemDetailsFactory.CreateValidationProblemDetails(_contextAccessor.HttpContext!, modelState, 400);
+        var detail = _problemDetailsFactory.CreateValidationProblemDetails(_contextAccessor.HttpContext!, modelState, StatusCodes.Status400BadRequest);
         return new BadRequestObjectResult(detail);
     }
 }

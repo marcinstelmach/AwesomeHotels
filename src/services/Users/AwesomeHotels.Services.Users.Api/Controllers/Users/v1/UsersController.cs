@@ -1,6 +1,6 @@
 ﻿using AwesomeHotels.Services.Users.Api.Utilities;
-using AwesomeHotels.Services.Users.Application.AddUser;
-using AwesomeHotels.Services.Users.Application.GetUsers;
+using AwesomeHotels.Services.Users.Application.Commands.AddUser;
+using AwesomeHotels.Services.Users.Application.Queries.GetUsers;
 using BuildingBlocks.Application.Bus;
 using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;

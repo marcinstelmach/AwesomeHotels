@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace AwesomeHotels.Services.Users.Application.AddUser;
+namespace AwesomeHotels.Services.Users.Application.Commands.AddUser;
 
 public class AddUserCommandValidator : AbstractValidator<AddUserCommand>
 {

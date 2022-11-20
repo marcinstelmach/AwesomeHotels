@@ -1,7 +1,7 @@
 ﻿using BuildingBlocks.Application.Bus;
 using ErrorOr;
 
-namespace AwesomeHotels.Services.Users.Application.AddUser;
+namespace AwesomeHotels.Services.Users.Application.Commands.AddUser;
 
 public class AddUserCommandHandler : ICommandHandler<AddUserCommand, ErrorOr<long>>
 {

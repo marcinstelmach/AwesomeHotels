@@ -1,5 +1,5 @@
 ﻿using AwesomeHotels.Services.Users.Api.Controllers.Users.v1;
-using AwesomeHotels.Services.Users.Application.AddUser;
+using AwesomeHotels.Services.Users.Application.Commands.AddUser;
 using Mapster;
 
 namespace AwesomeHotels.Services.Users.Api.Mappings;

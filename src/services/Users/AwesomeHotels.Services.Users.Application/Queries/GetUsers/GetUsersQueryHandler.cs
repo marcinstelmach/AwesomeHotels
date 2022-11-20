@@ -1,7 +1,7 @@
 ﻿using AwesomeHotels.Services.Users.Domain.Repositories;
 using BuildingBlocks.Application.Bus;
 
-namespace AwesomeHotels.Services.Users.Application.GetUsers;
+namespace AwesomeHotels.Services.Users.Application.Queries.GetUsers;
 
 public class GetUsersQueryHandler : IQueryHandler<GetUsersQuery, IEnumerable<GetUsersResponse>>
 {
