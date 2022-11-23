@@ -5,6 +5,8 @@ using AwesomeHotels.Services.Users.Infrastructure.Repositories;
 using AwesomeHotels.Services.Users.Infrastructure.Validation;
 using BuildingBlocks.Application;
 using BuildingBlocks.Application.Bus;
+using Mapster;
+using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +36,12 @@ public static class DependencyInjection
 
         services.AddTransient<IPasswordHasher<string>, PasswordHasher<string>>();
         services.AddTransient<IPasswordFactory, PasswordFactory>();
+
+        // Mapping
+        var config = TypeAdapterConfig.GlobalSettings;
+        config.Scan(UserInfrastructureAssemblyInfo.Assembly);
+        services.AddSingleton(config);
+        services.AddScoped<IMapper, ServiceMapper>();
 
         return services;
     }

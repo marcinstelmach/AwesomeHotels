@@ -18,10 +18,4 @@
 		<PackageReference Include="Mapster.DependencyInjection" Version="1.0.0" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="AddUser\" />
-	  <Folder Include="GetUsers\" />
-	  <Folder Include="Utilities\" />
-	</ItemGroup>
-
 </Project>
