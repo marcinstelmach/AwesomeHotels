@@ -1,21 +1,24 @@
 ﻿using AwesomeHotels.Services.Users.Domain.Exceptions;
+using AwesomeHotels.Services.Users.Domain.Factories;
 using BuildingBlocks.Domain;
 
 namespace AwesomeHotels.Services.Users.Domain.ValueObjects;
 
 public class Password : ValueObject
 {
-    protected Password(string passwordHash, string securityStamp)
+    private Password(string passwordHash)
     {
         PasswordHash = passwordHash;
-        SecurityStamp = securityStamp;
+        CheckInvariants();
     }
 
-    public string PasswordHash { get; set; }
+    public string PasswordHash { get; }
 
-    public string SecurityStamp { get; set; }
-
-    public static Password Create(string passwordHash, string securityStamp) => new(passwordHash, securityStamp);
+    public static Password Create(IPasswordFactory factory, string password)
+    {
+        var hash = factory.CreatePassword(password);
+        return new Password(hash);
+    }
 
     private void CheckInvariants()
     {
@@ -23,16 +26,10 @@ public class Password : ValueObject
         {
             throw new InvalidUserPasswordException("PasswordHash cannot be null or whitespace");
         }
-
-        if (string.IsNullOrWhiteSpace(SecurityStamp))
-        {
-            throw new InvalidUserPasswordException("SecurityStamp cannot be null or whitespace");
-        }
     }
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return PasswordHash;
-        yield return SecurityStamp;
     }
 }

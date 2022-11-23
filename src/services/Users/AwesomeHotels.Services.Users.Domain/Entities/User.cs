@@ -1,4 +1,5 @@
 ﻿using AwesomeHotels.Services.Users.Domain.Exceptions;
+using AwesomeHotels.Services.Users.Domain.Factories;
 using AwesomeHotels.Services.Users.Domain.ValueObjects;
 using BuildingBlocks.Domain;
 
@@ -6,7 +7,7 @@ namespace AwesomeHotels.Services.Users.Domain.Entities;
 
 public class User : IAggregateRoot
 {
-    public User(UserId id, EmailAddress emailAddress, string firstName, string lastName, DateOfBirth dateOfBirth, Password password, DateTimeOffset creationDateTime)
+    private User(UserId id, EmailAddress emailAddress, string firstName, string lastName, DateOfBirth dateOfBirth, Password password, DateTimeOffset creationDateTime)
     {
         Id = id;
         EmailAddress = emailAddress;
@@ -40,14 +41,14 @@ public class User : IAggregateRoot
 
     public bool IsDeleted { get; private set; }
 
-    public static User Create(long id, string email, string firstName, string lastName, DateOnly dateOfBirth, string passwordHash, string securityStamp)
+    public static User Create(long id, string email, string firstName, string lastName, DateOnly dateOfBirth, IPasswordFactory passwordFactory, string passwordHash, DateTimeOffset now)
     {
         var userId = UserId.Create(id);
         var emailAddress = EmailAddress.Create(email);
         var date = DateOfBirth.Create(dateOfBirth);
-        var password = Password.Create(passwordHash, securityStamp);
+        var password = Password.Create(passwordFactory, passwordHash);
 
-        return new User(userId, emailAddress, firstName, lastName, date, password, DateTimeOffset.UtcNow);
+        return new User(userId, emailAddress, firstName, lastName, date, password, now);
     }
 
     private void CheckInvariants()

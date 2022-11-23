@@ -27,4 +27,8 @@
 	  <ProjectReference Include="..\AwesomeHotels.Services.Users.Application\AwesomeHotels.Services.Users.Application.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Commands\AddUser\" />
+	</ItemGroup>
+
 </Project>

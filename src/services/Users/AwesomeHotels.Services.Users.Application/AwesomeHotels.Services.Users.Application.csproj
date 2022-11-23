@@ -21,6 +21,7 @@
 	<ItemGroup>
 	  <Folder Include="AddUser\" />
 	  <Folder Include="GetUsers\" />
+	  <Folder Include="Utilities\" />
 	</ItemGroup>
 
 </Project>

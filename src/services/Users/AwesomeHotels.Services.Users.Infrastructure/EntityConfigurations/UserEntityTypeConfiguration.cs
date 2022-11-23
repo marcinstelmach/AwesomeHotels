@@ -19,7 +19,10 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(x => x.Id).HasConversion(x => x.Value, x => UserId.Create(x));
 
-        builder.Property(x => x.EmailAddress).HasConversion(x => x.Value.ToLowerInvariant(), x => EmailAddress.Create(x));
+        builder.OwnsOne(x => x.EmailAddress, b =>
+        {
+            b.Property(y => y.Value).HasColumnName("EmailAddress");
+        });
 
         builder.OwnsOne(x => x.DateOfBirth, b =>
         {
@@ -31,7 +34,6 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
         builder.OwnsOne(x => x.Password, b =>
         {
             b.Property(y => y.PasswordHash).HasColumnName("PasswordHash");
-            b.Property(y => y.SecurityStamp).HasColumnName("SecurityStamp");
         });
 
         builder.HasQueryFilter(x => !x.IsDeleted);

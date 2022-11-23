@@ -28,7 +28,7 @@ public class EmailAddress : ValueObject
         var isEmail = Regex.IsMatch(Value, EmailRegexPattern, RegexOptions.IgnoreCase);
         if (!isEmail)
         {
-            throw new InvalidEmailException($"Given email is not correct email address", Value);
+            throw new InvalidEmailException("Given email is not correct email address", Value);
         }
     }
 

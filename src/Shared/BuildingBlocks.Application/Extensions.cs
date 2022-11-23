@@ -10,6 +10,8 @@ public static class Extensions
     {
         services.AddIdGen(number);
         services.AddSingleton<IIdGenerator, SnowflakeIdGenerator>();
+
+        services.AddSingleton<IDateTimeService, DateTimeService>();
         return services;
     }
 }
