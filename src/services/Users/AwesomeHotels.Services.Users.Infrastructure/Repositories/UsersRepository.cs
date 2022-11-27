@@ -29,8 +29,8 @@ public class UsersRepository : IUsersRepository, IUnitOfWork
         _usersDbContext.Users.Add(user);
     }
 
-    public async Task<int> SaveChangesAsync()
+    public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        return await _usersDbContext.SaveChangesAsync();
+        return await _usersDbContext.SaveChangesAsync(cancellationToken);
     }
 }

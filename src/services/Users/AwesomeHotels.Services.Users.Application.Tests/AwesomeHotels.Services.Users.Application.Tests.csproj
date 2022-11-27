@@ -24,6 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\..\Shared\BuildingBlocks.UnitTests.Common\BuildingBlocks.UnitTests.Common.csproj" />
 	  <ProjectReference Include="..\AwesomeHotels.Services.Users.Application\AwesomeHotels.Services.Users.Application.csproj" />
 	</ItemGroup>
 

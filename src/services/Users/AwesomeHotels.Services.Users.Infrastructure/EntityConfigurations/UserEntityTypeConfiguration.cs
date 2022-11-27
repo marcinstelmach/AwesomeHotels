@@ -33,7 +33,7 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
 
         builder.OwnsOne(x => x.Password, b =>
         {
-            b.Property(y => y.PasswordHash).HasColumnName("PasswordHash");
+            b.Property(y => y.Hash).HasColumnName("PasswordHash");
         });
 
         builder.HasQueryFilter(x => !x.IsDeleted);

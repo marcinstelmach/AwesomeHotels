@@ -41,10 +41,11 @@ public class AddUserCommandHandler : ICommandHandler<AddUserCommand, ErrorOr<lon
         }
 
         var id = _idGenerator.Generate();
-        var user = User.Create(id, request.Email, request.FirstName, request.LastName, request.DateOfBirth, _passwordFactory, request.Password, _dateService.GetDateTimeOffsetUtcNow());
+        var utcNow = _dateService.GetDateTimeOffsetUtcNow();
+        var user = User.Create(id, request.Email, request.FirstName, request.LastName, request.DateOfBirth, _passwordFactory, request.Password, utcNow);
         _usersRepository.Add(user);
 
-        await _unitOfWork.SaveChangesAsync();
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
         return user.Id.Value;
     }
 }

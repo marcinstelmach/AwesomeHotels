@@ -6,13 +6,13 @@ namespace AwesomeHotels.Services.Users.Domain.ValueObjects;
 
 public class Password : ValueObject
 {
-    private Password(string passwordHash)
+    private Password(string hash)
     {
-        PasswordHash = passwordHash;
+        Hash = hash;
         CheckInvariants();
     }
 
-    public string PasswordHash { get; }
+    public string Hash { get; }
 
     public static Password Create(IPasswordFactory factory, string password)
     {
@@ -22,14 +22,14 @@ public class Password : ValueObject
 
     private void CheckInvariants()
     {
-        if (string.IsNullOrWhiteSpace(PasswordHash))
+        if (string.IsNullOrWhiteSpace(Hash))
         {
-            throw new InvalidUserPasswordException("PasswordHash cannot be null or whitespace");
+            throw new InvalidUserPasswordException("Hash cannot be null or whitespace");
         }
     }
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
-        yield return PasswordHash;
+        yield return Hash;
     }
 }

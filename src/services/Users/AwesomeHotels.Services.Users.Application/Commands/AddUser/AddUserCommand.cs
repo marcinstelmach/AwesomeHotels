@@ -9,5 +9,5 @@ public record AddUserCommand(
     string LastName,
     string Password,
     string ConfirmPassword,
-    DateOnly DateOfBirth)
+    DateTime DateOfBirth)
     : ICommand<ErrorOr<long>>;

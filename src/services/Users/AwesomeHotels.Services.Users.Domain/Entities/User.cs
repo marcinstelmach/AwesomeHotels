@@ -41,11 +41,11 @@ public class User : IAggregateRoot
 
     public bool IsDeleted { get; private set; }
 
-    public static User Create(long id, string email, string firstName, string lastName, DateOnly dateOfBirth, IPasswordFactory passwordFactory, string passwordHash, DateTimeOffset now)
+    public static User Create(long id, string email, string firstName, string lastName, DateTime dateOfBirth, IPasswordFactory passwordFactory, string passwordHash, DateTimeOffset now)
     {
         var userId = UserId.Create(id);
         var emailAddress = EmailAddress.Create(email);
-        var date = DateOfBirth.Create(dateOfBirth);
+        var date = DateOfBirth.Create(DateOnly.FromDateTime(dateOfBirth));
         var password = Password.Create(passwordFactory, passwordHash);
 
         return new User(userId, emailAddress, firstName, lastName, date, password, now);
